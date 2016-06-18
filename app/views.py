@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template,jsonify
 from app import app
 
 from .models import Blog
@@ -21,11 +21,23 @@ def index():
                            title='Home',
                            user=user,
                            blogs=blogs)
-"""
-class PostView(restful.Resource):
-    def get(self):
-        posts = Blog.query.all()
-        return PostSerializer(posts).data
 
-api.add_resource(PostView, '/api/v1/posts')
-"""
+
+blogs = [
+    {
+        'id': 1,
+        'title': u'china town',
+        'content': u'Chinese market going down'
+        
+    },
+    {
+        'id': 2,
+        'title': u'Learn Python',
+        'content': u'Need to find a good Python tutorial on the web'
+        
+    }
+]
+
+@app.route('/blogs', methods=['GET'])
+def get_blogs():
+    return jsonify({'blogs': blogs})
