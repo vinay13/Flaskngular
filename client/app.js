@@ -30,7 +30,7 @@ app.controller("homeCtrl",function($scope,$http){
 
 	$http.get("http://flaskblogger.pythonanywhere.com/blogs")
 	.then(function(response) {
-        $scope.records = response.data.tasks;
+        $scope.records = response.data.blog;
         console.log($scope.records);
     });
     });
