@@ -28,7 +28,7 @@ app.config(function($stateProvider,$urlRouterProvider){
 
 app.controller("homeCtrl",function($scope,$http){
 
-	$http.get("http://flaskblog.pythonanywhere.com/tasks")
+	$http.get("http://flaskblogger.pythonanywhere.com/blogs")
 	.then(function(response) {
         $scope.records = response.data.tasks;
         console.log($scope.records);
@@ -40,7 +40,7 @@ app.controller("blogCtrl",function($scope,$http){
 
 	$scope.read = function(p){
 	var id= p; 
-	$http.get("http://flaskblog.pythonanywhere.com/tasks/" + id)
+	$http.get("http://flaskblogger.pythonanywhere.com/blogs/" + id)
 	.then(function(response) {
         $scope.records = response.data;
         console.log($scope.records);
