@@ -5,8 +5,6 @@ from .models import Blog
 #from flask.ext import restful
 
 #from app import api, db
-#from models import  Blog
-#from forms import UserCreateForm, SessionCreateForm, PostCreateForm
 #from serializers import UserSerializer, PostSerializer
 
 @app.route('/')
